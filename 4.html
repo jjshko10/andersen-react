@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react basic 4</title>
+    <style>
+        body,html {
+            text-align: center;
+        }
+        .container {
+            background-color: aqua;
+        }
+        .hello {
+            font-style: italic;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+        .yourName {
+            color: chocolate;
+            font-size: 20px;
+        }
+        .form {
+            margin-top: 10px;
+        }
+        .input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+
+    <script type="text/babel">
+
+    const Hello = (props) => {
+        return (
+            <h1 className={props.className}>Hello!</h1>
+        )
+    };
+
+    const YourName = (props) => {
+        return (
+            <span className={props.className}>What's your name?</span>
+        )
+    };
+
+    const NyName = (props) => {
+        return (
+            <input className={props.className} type={props.type} placeholder={props.placeholder} />
+        )
+    };
+
+    const Submit = (props) => {
+        return (
+            <input className={props.className} type={props.type} />
+        )
+    };
+
+    const Reset = (props) => {
+        return (
+            <input className={props.className} type={props.type} /> 
+        )
+    };
+
+    const Form = (props) => {
+        return (
+            <form action="#" className={props.className}>
+                <NyName className='input' type='text' placeholder='My name is ...' />
+                <Submit className='input' type='submit' />
+                <Reset className='input' type='reset' />
+            </form> 
+        )
+    };
+
+    const element = (
+        <div className='container'>
+            <Hello className='hello' />
+            <YourName className='yourName' />
+            <Form className='form' />
+        </div>
+    )
+
+    ReactDOM.render(element, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
